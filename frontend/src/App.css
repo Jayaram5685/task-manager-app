@@ -1,0 +1,240 @@
+/* frontend/src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --background-color: #1a1a1a;
+  --surface-color: #2c2c2c;
+  --primary-color: #bb86fc;
+  --primary-variant-color: #3700b3;
+  --secondary-color: #03dac6;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --border-color: #444444;
+  --error-color: #cf6679;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+.main-content {
+  padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+}
+.nav-brand {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-link, .nav-btn {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.nav-link:hover, .nav-btn:hover {
+  color: var(--text-primary);
+}
+.nav-user {
+  color: var(--text-primary);
+}
+
+
+/* Auth Form Styles */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+}
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+.auth-form h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+.auth-form button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.auth-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+}
+.auth-link a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+.error-msg {
+  color: var(--error-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
+/* Task Page Styles (copied from before) */
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.app-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--primary-color);
+}
+.app-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+.task-input-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.task-input-form input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+.task-input-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+.task-input-form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--surface-color);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+.task-item.completed {
+  background-color: #222;
+}
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+}
+.task-checkbox {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--secondary-color);
+}
+.task-title {
+  font-size: 1rem;
+}
+.edit-form {
+  flex-grow: 1;
+}
+.edit-form input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  color: var(--text-primary);
+  font-size: 1rem;
+  padding: 0.25rem;
+}
+.task-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
