@@ -17,8 +17,7 @@ const LoginPage = () => {
       // 
       // THIS IS THE ONLY LINE YOU NEED TO CHANGE
       // 
-      const res = await axios.post('https://YOUR_BACKEND_API_URL.onrender.com/api/auth/login', { email, password });
-      
+const res = await axios.post('https://your_backend_api_url.onrender.com/api/auth/login', { email, password });      
       login(res.data.token, res.data.user);
       navigate('/');
     } catch (err) {
