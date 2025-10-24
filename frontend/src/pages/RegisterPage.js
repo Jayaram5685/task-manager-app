@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const RegisterPage = () => {
+  const [username, setUsername] = useState(''); // Assuming you have a username field
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -12,7 +13,11 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/auth/register', { email, password });
+      // 
+      // THIS IS THE ONLY LINE YOU NEED TO CHANGE
+      // 
+      await axios.post('https://YOUR_BACKEND_API_URL.onrender.com/api/auth/register', { username, email, password });
+      
       navigate('/login');
     } catch (err) {
       setError(err.response.data.msg || 'Registration failed');
@@ -22,8 +27,19 @@ const RegisterPage = () => {
   return (
     <div className="auth-container">
       <form className="auth-form" onSubmit={handleSubmit}>
-        <h2>Create Account</h2>
+        <h2>Register</h2>
         {error && <p className="error-msg">{error}</p>}
+        {/* Make sure your form inputs match the data being sent */}
+        <div className="form-group">
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
