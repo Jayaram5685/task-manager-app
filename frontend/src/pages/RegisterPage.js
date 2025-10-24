@@ -13,9 +13,7 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // 
       // THIS IS THE CORRECTED LINE
-      // 
       await axios.post('https://my-task-api-0y8m.onrender.com/api/auth/register', { username, email, password });
       
       navigate('/login');
